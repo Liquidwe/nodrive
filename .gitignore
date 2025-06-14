@@ -1,0 +1,42 @@
+# Node.js dependencies
+node_modules/
+
+# Output directories
+dist/
+build/
+out/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*.local
+
+# IDE and editor configs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Optional: exclude compiled JS files if source is TS
+*.js
+*.js.map
+
+# Optional: exclude coverage if using Jest or similar
+coverage/
+
+# Optional: exclude lock file if not committing it
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
