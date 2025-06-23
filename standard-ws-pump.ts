@@ -207,7 +207,6 @@ function reconnect() {
 // Start the initial connection
 connect();
 
-// Cleanup function
 process.on('SIGINT', () => {
   if (retryTimeout) {
     clearTimeout(retryTimeout);
