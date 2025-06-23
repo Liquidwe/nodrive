@@ -141,24 +141,19 @@ function connect() {
         const { context, value } = messageObj.params.result;
         
         if (value.transaction) {
-          // Format the transaction
           const txn = TXN_FORMATTER.formTransactionFromJson(
             value,
             Date.now()
           );
 
-          // Parse PumpFun transaction
           const parsedTxn = decodePumpFunTxn(txn);
           if (!parsedTxn) return;
 
-          // Convert to local types for swap parser
           const convertedParsedTxn = convertParsedInstructions(parsedTxn);
 
-          // Parse swap transaction output
           const formattedSwapTxn = parseSwapTransactionOutput(convertedParsedTxn, txn);
           if (!formattedSwapTxn) return;
 
-          // Log transaction details
           console.log(
             new Date(),
             ":",
@@ -204,7 +199,6 @@ function reconnect() {
   }, delay);
 }
 
-// Start the initial connection
 connect();
 
 process.on('SIGINT', () => {
